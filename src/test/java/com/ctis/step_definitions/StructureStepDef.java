@@ -1,4 +1,4 @@
 package com.ctis.step_definitions;
 
-public class ConstructorStepDef {
+public class StructureStepDef {
 }
