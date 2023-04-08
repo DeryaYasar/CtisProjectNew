@@ -23,7 +23,7 @@ Feature:Use functions on Company Structure under Employee menu.
       | helpdesk50@cybertekschool.com  | UserUser          |
       | marketing75@cybertekschool.com | UserUser          |
 
-  @second-thirdOK-fourth??
+  @second-third-fourthOK
   Scenario Outline:Verify that Hr user should be able to add a department from the company structure and
   be able to select a parent department from the department dropdown should be able to select a supervisor
     When Hr user click ADD DEPARTMENT button
@@ -31,14 +31,14 @@ Feature:Use functions on Company Structure under Employee menu.
 
     When user select "<Parent Department>" from dropdown button
     When user click Select from structure button
-    Then user select "<Structure Options>"
+    Then user select "<Structure Options>" and add supervisor
     And user click ADD button
 
     Examples:
       | name           | Parent Department | Structure Options |
       | DevOps         | Developer         | Company           |
       | Product Owners | group17           | Search            |
-      | Cosmetic       | Tester1           | recent            |
+      | Cosmetic       | Tester1           | Recent            |
 
   @fifthOK
   Scenario:Verify Hr user should be able to close add department pop-up at any time before sending
@@ -53,7 +53,7 @@ Feature:Use functions on Company Structure under Employee menu.
 
     When Hr user click ADD DEPARTMENT button
     When user click Select from structure button
-    Then user select "<Structure Options>"
+    Then user select "<Recent>" and add supervisor
     And user click CLOSE button
 
   @sixth!!!

@@ -15,7 +15,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/ctis/step_definitions",
         dryRun = false,
-        tags = "@eighth",
+        tags = "@4",
         publish = true
 )
 public class CukesRunner {

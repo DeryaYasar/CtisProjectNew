@@ -27,15 +27,18 @@ public class StructureStepDef {
         structurePageELements.employeeTab.click();
         BrowserUtils.sleep(2);
     }
+
     @When("user clean username bar")
     public void userCleanUsernameBar() {
         structurePageELements.loguserName.clear();
     }
+
     @Then("user should see Company Structure tab")
     public void user_should_see_company_structure_tab() {
         structurePageELements.companyStructureTab.isDisplayed();
         BrowserUtils.sleep(2);
     }
+
     @When("Hr user click ADD DEPARTMENT button")
     public void hr_user_click_add_department_button() {
         structurePageELements.addDepartmentButton.click();
@@ -47,6 +50,7 @@ public class StructureStepDef {
         structurePageELements.departmentName.sendKeys(name);
 
     }
+
     @When("user click Parent Department dropdown button")
     public void userClickParentDepartmentDropdownButton() {
         structurePageELements.parentDepartmentDropdown.click();
@@ -56,9 +60,9 @@ public class StructureStepDef {
 
     @When("user select {string} from dropdown button")
     public void userSelectFromDropdownButton(String parent) {
-       // structurePageELements.parentDepartmentDropdown.click();
+        // structurePageELements.parentDepartmentDropdown.click();
         Select select = new Select(structurePageELements.parentDepartmentDropdown);
-        select.selectByVisibleText(" .  . "+parent);
+        select.selectByVisibleText(" .  . " + parent);
     }
 
     @When("user select Parent Department from dropdown button")
@@ -66,40 +70,48 @@ public class StructureStepDef {
         Select select = new Select(structurePageELements.parentDepartmentDropdown);
         select.selectByIndex(2);
     }
+
     @When("user click Select from structure button")
     public void userClickSelectFromStructureButton() {
         structurePageELements.selectFromStructureButton.click();
     }
 
 
-    @Then("user select {string}")
+    @Then("user select {string} and add supervisor")
     public void userSelect(String Options) {
+       structurePageELements.selectOptionsandSupervisor(Options);
 
-     //   method yaz!!!
+        //   method yaz!!!
     }
+
+
     @When("user click ADD button")
     public void user_click_add_button() {
         structurePageELements.departmentName.click();
         structurePageELements.addButton.click();
 
     }
+
     @And("user click CLOSE button")
     public void userClickCLOSEButton() {
         structurePageELements.closeButton.click();
         BrowserUtils.sleep(2);
     }
+
     @When("user hover over on a department")
     public void userHoverOverOnADepartment() {
         Actions actions = new Actions(Driver.getDriver());
         actions.moveToElement(structurePageELements.DevDepartmentButton).perform();
     }
+
     @And("user click Add child department button")
     public void userClickAddChildDepartmentButton() {
         structurePageELements.addDepartmentButton.click();
     }
+
     @When("user write a {string}")
     public void user_write_a_name(String childname) {
-        structurePageELements.departmentName.sendKeys(childname+" Child Department");
+        structurePageELements.departmentName.sendKeys(childname + " Child Department");
         BrowserUtils.sleep(2);
 
     }
@@ -108,6 +120,7 @@ public class StructureStepDef {
     public void userClickEditDepartmentButton() {
         structurePageELements.editDepartmentButton.click();
     }
+
     @And("user click save button")
     public void userClickSaveButton() {
         structurePageELements.saveButton.click();
@@ -125,7 +138,7 @@ public class StructureStepDef {
     @When("user drag and drop a department under another department")
     public void userDragAndDropADepartmentUnderAnotherDepartment() {
         Actions actions = new Actions(Driver.getDriver());
-        actions.dragAndDrop(structurePageELements.childDepartment,structurePageELements.parentDepartment).perform();
+        actions.dragAndDrop(structurePageELements.childDepartment, structurePageELements.parentDepartment).perform();
     }
 
     @Then("user see ADD DEPARTMENT button")
@@ -134,10 +147,10 @@ public class StructureStepDef {
         //String str = (employeePage.addDepartmentContainer).getText();
         //System.out.println(str);
         //Assert.assertFalse(str.equals("ADD DEPARTMENT"));
-        WebElement c=Driver.getDriver().findElement(By.xpath("//span[@class='menu-item-link-text'][contains(.,'Employees')]"));
+        WebElement c = Driver.getDriver().findElement(By.xpath("//span[@class='menu-item-link-text'][contains(.,'Employees')]"));
         c.click();
         Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        WebElement dr=Driver.getDriver().findElement(By.xpath("//div[@class='pagetitle-inner-container']"));
+        WebElement dr = Driver.getDriver().findElement(By.xpath("//div[@class='pagetitle-inner-container']"));
         System.out.println(dr.getText());
         Assert.assertTrue(dr.getText().contains("ADD DEPARTMENT"));
 
@@ -145,13 +158,13 @@ public class StructureStepDef {
     }
 
     @Then("user should not see ADD DEPARTMENT button")
-    public void userShouldNotSeeADDDEPARTMENTButton(){
+    public void userShouldNotSeeADDDEPARTMENTButton() {
         //String str = (employeePage.addDepartmentContainer).getText();
         //Assert.assertFalse(str.equals("ADD DEPARTMENT"));
-        WebElement c=Driver.getDriver().findElement(By.xpath("//span[@class='menu-item-link-text'][contains(.,'Employees')]"));
+        WebElement c = Driver.getDriver().findElement(By.xpath("//span[@class='menu-item-link-text'][contains(.,'Employees')]"));
         c.click();
         Driver.getDriver().manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
-        WebElement dr=Driver.getDriver().findElement(By.xpath("//div[@class='pagetitle-inner-container']"));
+        WebElement dr = Driver.getDriver().findElement(By.xpath("//div[@class='pagetitle-inner-container']"));
         System.out.println(dr.getText());
         Assert.assertFalse(dr.getText().contains("ADD DEPARTMENT"));
 
@@ -164,7 +177,6 @@ public class StructureStepDef {
 
 
     }
-
 
 
 }
