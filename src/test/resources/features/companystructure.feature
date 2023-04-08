@@ -56,23 +56,26 @@ Feature:Use functions on Company Structure under Employee menu.
     Then user select "<Recent>" and add supervisor
     And user click CLOSE button
 
-  @sixth!!!
+  @sixth
   Scenario Outline:Verify Hr user should be able to edit add child departments and
   Hr user should be able to edit departments and delete departments after adding the department
     When user hover over on a department
     And user click Add child department button
     And user write a "<child name>"
+    When user select Parent Department from dropdown button
+    And user click ADD button
 
     When user hover over on a department
     And user click Edit department button
-    And user write a "<new name>"
+    When user clean department "<parent name>" bar
+    And user write a new "<name>"
     And user click save button
-    And user click Delete department button
+    And user click Delete child department button
 
     Examples:
-      | child name | new name |
-      | Team 1     | Boss     |
-      | Team 2     | Main     |
+      | child name | parent name | name      |
+      | Team 1     | Developer   | Boss      |
+      | Team 2     | Boss        | Developer |
 
   @seventhOK
   Scenario:Verify Hr user should be able to drag and drop the existing department under another department as a subdepartment

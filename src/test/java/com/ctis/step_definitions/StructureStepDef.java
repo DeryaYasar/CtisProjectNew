@@ -10,9 +10,12 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
@@ -68,7 +71,7 @@ public class StructureStepDef {
     @When("user select Parent Department from dropdown button")
     public void userSelectParentDepartmentFromDropdownButton() {
         Select select = new Select(structurePageELements.parentDepartmentDropdown);
-        select.selectByIndex(2);
+        select.selectByIndex(1);
     }
 
     @When("user click Select from structure button")
@@ -81,7 +84,6 @@ public class StructureStepDef {
     public void userSelect(String Options) {
        structurePageELements.selectOptionsandSupervisor(Options);
 
-        //   method yaz!!!
     }
 
 
@@ -109,6 +111,11 @@ public class StructureStepDef {
         structurePageELements.addDepartmentButton.click();
     }
 
+    @When("user clean department {string} bar")
+    public void userCleanDepartmentNameBar(String barName) {
+       structurePageELements.cleanBar(barName);
+    }
+
     @When("user write a {string}")
     public void user_write_a_name(String childname) {
         structurePageELements.departmentName.sendKeys(childname + " Child Department");
@@ -116,8 +123,25 @@ public class StructureStepDef {
 
     }
 
+    @And("user write a new {string}")
+    public void userWriteANew(String name) {
+        structurePageELements.departmentName.sendKeys(name);
+        BrowserUtils.sleep(2);
+    }
+
+  /*  @When("user hover over on a child department")
+    public void userHoverOverOnAChildDepartment() {
+        Actions actions = new Actions(Driver.getDriver());
+        actions.moveToElement(structurePageELements.childDepartment).perform();
+
+
+        // method yazilabilir
+    }*/
+
     @And("user click Edit department button")
     public void userClickEditDepartmentButton() {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(structurePageELements.editDepartmentButton));
         structurePageELements.editDepartmentButton.click();
     }
 
@@ -133,6 +157,13 @@ public class StructureStepDef {
         actions.moveToElement(structurePageELements.developerDepartmentButton).perform();
         structurePageELements.deleteDepartmentButton.click();
 // method yazilabilir
+    }
+
+    @And("user click Delete child department button")
+    public void userClickDeleteChildDepartmentButton() {
+        Actions actions = new Actions(Driver.getDriver());
+        actions.moveToElement(structurePageELements.childDepartment).perform();
+    structurePageELements.deleteChildDepartmentButton.click();
     }
 
     @When("user drag and drop a department under another department")
@@ -177,6 +208,7 @@ public class StructureStepDef {
 
 
     }
+
 
 
 }
