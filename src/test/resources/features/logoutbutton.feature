@@ -1,10 +1,6 @@
-@wip
-
 Feature: Log out Function
 
-	Background:
-	@CTSL10-321
-	Scenario: Verify user type 'Human Resource ' can login
+	Background:Verify user type 'Human Resource ' can login
 		Given user is on the login page
 		When user enters username "hr1@cybertekschool.com"
 		And user enters password "UserUser"

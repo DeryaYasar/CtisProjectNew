@@ -53,7 +53,7 @@ public class Driver {
                     ChromeOptions options = new ChromeOptions();
                     options.addArguments("--remote-allow-origins=*");
                     WebDriverManager.chromedriver().setup();
-                    driverPool.set(new ChromeDriver());
+                    driverPool.set(new ChromeDriver(options));
                     driverPool.get().manage().window().maximize();
                     driverPool.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
                     break;
