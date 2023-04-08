@@ -35,10 +35,10 @@ public class StructurePageELements {
 
     @FindBy(xpath = "//span[@class='popup-window-button popup-window-button-accept']")
     public WebElement addButton;
-    @FindBy(xpath = "//span[@id='bx_str_129']")
-    public WebElement cyberVetDepartmentButton;
+    @FindBy(xpath = "//span[@id='bx_str_149']")
+    public WebElement DevDepartmentButton;
 
-    @FindBy(xpath = "//td[@class='bx-str-top']//div[@title='Edit department']")
+    @FindBy(css = "#bx_visual_structure [valign='top']:nth-of-type(1) [data-role='department_edit']")
     public WebElement editDepartmentButton;
 
     @FindBy(xpath = "//span[@class='popup-window-button popup-window-button-accept']")

@@ -7,7 +7,8 @@ Feature:Use functions on Company Structure under Employee menu.
     Then clicks to the Log In button
     And user lands on the home page.
     When user should click Employee tab
-@firstOK
+
+  @firstOK
   Scenario Outline: Verify all user types should be able to display company structure
     When user select log out
     When user clean username bar
@@ -22,7 +23,7 @@ Feature:Use functions on Company Structure under Employee menu.
       | helpdesk50@cybertekschool.com  | UserUser          |
       | marketing75@cybertekschool.com | UserUser          |
 
-@second-third-fourthOK
+  @second-thirdOK-fourth??
   Scenario Outline:Verify that Hr user should be able to add a department from the company structure and
   be able to select a parent department from the department dropdown should be able to select a supervisor
     When Hr user click ADD DEPARTMENT button
@@ -39,7 +40,7 @@ Feature:Use functions on Company Structure under Employee menu.
       | Product Owners | group17           | Search            |
       | Cosmetic       | Tester1           | recent            |
 
-@fifthOK
+  @fifthOK
   Scenario:Verify Hr user should be able to close add department pop-up at any time before sending
     When Hr user click ADD DEPARTMENT button
     And user write a "<name>"
@@ -55,12 +56,13 @@ Feature:Use functions on Company Structure under Employee menu.
     Then user select "<Structure Options>"
     And user click CLOSE button
 
-@sixth
-  Scenario Outline:Verify Hr user should be able to edit add child departments and Hr user should be able to edit departments and delete departments after adding the department
+  @sixth!!!
+  Scenario Outline:Verify Hr user should be able to edit add child departments and
+  Hr user should be able to edit departments and delete departments after adding the department
     When user hover over on a department
     And user click Add child department button
     And user write a "<child name>"
-    And user click ADD button
+
     When user hover over on a department
     And user click Edit department button
     And user write a "<new name>"
@@ -72,14 +74,15 @@ Feature:Use functions on Company Structure under Employee menu.
       | Team 1     | Boss     |
       | Team 2     | Main     |
 
-  @seventh
+  @seventhOK
   Scenario:Verify Hr user should be able to drag and drop the existing department under another department as a subdepartment
     When user drag and drop a department under another department
 
-@eighth
+  @eighthOK
   Scenario Outline:Verify Helpdesk and marketing users can not change company structure
     Then user see ADD DEPARTMENT button
     When user select log out
+    When user clean username bar
     When user enters username "<Employee e-mail>"
     And user enters password "<Employee password>"
     Then clicks to the Log In button

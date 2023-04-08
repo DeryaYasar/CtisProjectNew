@@ -91,7 +91,7 @@ public class StructureStepDef {
     @When("user hover over on a department")
     public void userHoverOverOnADepartment() {
         Actions actions = new Actions(Driver.getDriver());
-        actions.moveToElement(structurePageELements.cyberVetDepartmentButton).perform();
+        actions.moveToElement(structurePageELements.DevDepartmentButton).perform();
     }
     @And("user click Add child department button")
     public void userClickAddChildDepartmentButton() {
@@ -101,6 +101,7 @@ public class StructureStepDef {
     public void user_write_a_name(String childname) {
         structurePageELements.departmentName.sendKeys(childname+" Child Department");
         BrowserUtils.sleep(2);
+
     }
 
     @And("user click Edit department button")
