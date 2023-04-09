@@ -2,8 +2,10 @@ package com.ctis.pages;
 
 import com.ctis.utilities.Driver;
 import org.apache.xmlbeans.impl.xb.xsdschema.Public;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -68,7 +70,7 @@ public class StructurePageELements {
     @FindBy(xpath = "//input[@value='Boss']")
     public WebElement BossBar;
 
-    @FindBy(xpath = "(//div[@title='Delete department'])[9]")
+    @FindBy(xpath = "(//div[@title='Delete department'])[8]")
     public WebElement deleteChildDepartmentButton;
 
     @FindBy(xpath = "(//span[@class='structure-dept-block structure-dept-third structure-dept-editable'])[1]")
@@ -127,9 +129,18 @@ public class StructurePageELements {
     public void cleanBar(String barName) {
         this.barName = barName;
 WebElement barlocater = Driver.getDriver().findElement(By.xpath("//input[@value='"+barName+"']"));
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOf(barlocater));
+       /* WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(20));
+        wait.until(ExpectedConditions.visibilityOf(barlocater)); */
         barlocater.clear();
     }
 
+    public void deleteChildDepartment(WebElement childDep, WebElement delChildDep){
+
+        Actions actions = new Actions(Driver.getDriver());
+        actions.moveToElement(childDep).perform();
+        delChildDep.click();
+        Alert alert = Driver.getDriver().switchTo().alert();
+        alert.accept();
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(5));
+    }
 }

@@ -130,14 +130,7 @@ public class StructureStepDef {
         BrowserUtils.sleep(2);
     }
 
-  /*  @When("user hover over on a child department")
-    public void userHoverOverOnAChildDepartment() {
-        Actions actions = new Actions(Driver.getDriver());
-        actions.moveToElement(structurePageELements.childDepartment).perform();
 
-
-        // method yazilabilir
-    }*/
 
     @And("user click Edit department button")
     public void userClickEditDepartmentButton() {
@@ -153,21 +146,14 @@ public class StructureStepDef {
 
     @And("user click Delete department button")
     public void userClickDeleteDepartmentButton() {
-        //method
         Actions actions = new Actions(Driver.getDriver());
         actions.moveToElement(structurePageELements.developerDepartmentButton).perform();
         structurePageELements.deleteDepartmentButton.click();
-// method yazilabilir
     }
 
     @And("user click Delete child department button")
     public void userClickDeleteChildDepartmentButton() {
-        Actions actions = new Actions(Driver.getDriver());
-        actions.moveToElement(structurePageELements.childDepartment).perform();
-    structurePageELements.deleteChildDepartmentButton.click();
-        Alert alert = Driver.getDriver().switchTo().alert();
-        alert.accept();
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(5));
+   structurePageELements.deleteChildDepartment(structurePageELements.childDepartment,structurePageELements.deleteChildDepartmentButton);
     }
 
     @When("user drag and drop a department under another department")
@@ -177,16 +163,16 @@ public class StructureStepDef {
     }
 
     @Then("user see ADD DEPARTMENT button")
-    public void userSeeADDDEPARTMENTButton() {
+    public void userSeeADD_DEPARTMENTButton() {
         //employeePage.addDepartmentButton.isDisplayed();
         //String str = (employeePage.addDepartmentContainer).getText();
         //System.out.println(str);
         //Assert.assertFalse(str.equals("ADD DEPARTMENT"));
-        WebElement c = Driver.getDriver().findElement(By.xpath("//span[@class='menu-item-link-text'][contains(.,'Employees')]"));
-        c.click();
+        Driver.getDriver().findElement(By.xpath("//span[@class='menu-item-link-text'][contains(.,'Employees')]")).click();
+        //c.click();
         Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         WebElement dr = Driver.getDriver().findElement(By.xpath("//div[@class='pagetitle-inner-container']"));
-        System.out.println(dr.getText());
+        //System.out.println(dr.getText());
         Assert.assertTrue(dr.getText().contains("ADD DEPARTMENT"));
 
 
@@ -196,11 +182,11 @@ public class StructureStepDef {
     public void userShouldNotSeeADDDEPARTMENTButton() {
         //String str = (employeePage.addDepartmentContainer).getText();
         //Assert.assertFalse(str.equals("ADD DEPARTMENT"));
-        WebElement c = Driver.getDriver().findElement(By.xpath("//span[@class='menu-item-link-text'][contains(.,'Employees')]"));
-        c.click();
-        Driver.getDriver().manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
+        Driver.getDriver().findElement(By.xpath("//span[@class='menu-item-link-text'][contains(.,'Employees')]")).click();
+        // c.click();
+        Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         WebElement dr = Driver.getDriver().findElement(By.xpath("//div[@class='pagetitle-inner-container']"));
-        System.out.println(dr.getText());
+       // System.out.println(dr.getText());
         Assert.assertFalse(dr.getText().contains("ADD DEPARTMENT"));
 
        /* try{
@@ -216,18 +202,3 @@ public class StructureStepDef {
 
 
 }
-/*
- 1. All user types should be able to display company structure.
-
-  2. Hr user should be able to add a department from the company structure.
-  3. Hr user should be able to select a parent department from the department dropdown.
-  4.Hr userr should be able to select a supervisor from "recent", "company" and "search"
-
-  5.Hr user should be able to close add department pop-up at any time before sending.
-
-  6.Hr user should be able to edit departments, add child departments, and delete departments after adding the department.
-
-  7.Hr user should be able to drag and drop the existing department under another department as a subdepartment.
-
-  8. Helpdesk and marketing users can not change company structure.
- */

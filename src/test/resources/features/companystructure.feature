@@ -1,3 +1,4 @@
+@wip
 Feature:Use functions on Company Structure under Employee menu.
 
   Background:user is already logged in
@@ -56,7 +57,7 @@ Feature:Use functions on Company Structure under Employee menu.
     Then user select "<Recent>" and add supervisor
     And user click CLOSE button
 
-  @sixth
+  @sixthOK
   Scenario Outline:Verify Hr user should be able to edit add child departments and
   Hr user should be able to edit departments and delete departments after adding the department
     When user hover over on a department
