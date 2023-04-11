@@ -44,15 +44,27 @@ public class Driver {
              */
             String browserType = ConfigurationReader.getProperty("browser");
 
-
             /*
                 Depending on the browserType that will be return from configuration.properties file
                 switch statement will determine the case, and open the matching browser
             */
+
+            ChromeOptions options = new ChromeOptions();
+
             switch (browserType){
                 case "chrome":
-                    ChromeOptions options = new ChromeOptions();
+
                     options.addArguments("--remote-allow-origins=*");
+                    WebDriverManager.chromedriver().setup();
+                    driverPool.set(new ChromeDriver(options));
+                    driverPool.get().manage().window().maximize();
+                    driverPool.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+                    break;
+                case "chrome-headless":
+                    //ChromeOptions options = new ChromeOptions();
+                    // driverPool.set(new ChromeDriver(new ChromeOptions().setHeadless(true)));
+                    options.addArguments("--remote-allow-origins=*");
+                    options.setHeadless(true);
                     WebDriverManager.chromedriver().setup();
                     driverPool.set(new ChromeDriver(options));
                     driverPool.get().manage().window().maximize();
