@@ -45,6 +45,8 @@ public class StructureStepDef {
 
     @When("Hr user click ADD DEPARTMENT button")
     public void hr_user_click_add_department_button() {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(structurePageELements.addDepartmentButton));
         structurePageELements.addDepartmentButton.click();
 
     }
@@ -109,6 +111,8 @@ public class StructureStepDef {
 
     @And("user click Add child department button")
     public void userClickAddChildDepartmentButton() {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(structurePageELements.addDepartmentButton));
         structurePageELements.addDepartmentButton.click();
     }
 
