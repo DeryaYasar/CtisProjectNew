@@ -129,8 +129,8 @@ public class StructurePageELements {
     public void cleanBar(String barName) {
         this.barName = barName;
 WebElement barlocater = Driver.getDriver().findElement(By.xpath("//input[@value='"+barName+"']"));
-       /* WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(20));
-        wait.until(ExpectedConditions.visibilityOf(barlocater)); */
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(20));
+        wait.until(ExpectedConditions.visibilityOf(barlocater));
         barlocater.clear();
     }
 

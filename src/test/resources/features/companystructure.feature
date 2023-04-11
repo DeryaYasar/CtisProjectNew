@@ -9,7 +9,7 @@ Feature:Use functions on Company Structure under Employee menu.
     And user lands on the home page.
     When user should click Employee tab
 
-  @firstOK
+  @CTSL10-464
   Scenario Outline: Verify all user types should be able to display company structure
     When user select log out
     When user clean username bar
@@ -24,7 +24,7 @@ Feature:Use functions on Company Structure under Employee menu.
       | helpdesk50@cybertekschool.com  | UserUser          |
       | marketing75@cybertekschool.com | UserUser          |
 
-  @second-third-fourthOK
+  @CTSL10-466
   Scenario Outline:Verify that Hr user should be able to add a department from the company structure and
   be able to select a parent department from the department dropdown should be able to select a supervisor
     When Hr user click ADD DEPARTMENT button
@@ -41,7 +41,7 @@ Feature:Use functions on Company Structure under Employee menu.
       | Product Owners | group17           | Search            |
       | Cosmetic       | Tester1           | Recent            |
 
-  @fifthOK
+  @CTSL10-467
   Scenario:Verify Hr user should be able to close add department pop-up at any time before sending
     When Hr user click ADD DEPARTMENT button
     And user write a "<name>"
@@ -57,7 +57,7 @@ Feature:Use functions on Company Structure under Employee menu.
     Then user select "<Recent>" and add supervisor
     And user click CLOSE button
 
-  @sixthOK
+  @CTSL10-468
   Scenario Outline:Verify Hr user should be able to edit add child departments and
   Hr user should be able to edit departments and delete departments after adding the department
     When user hover over on a department
@@ -78,11 +78,11 @@ Feature:Use functions on Company Structure under Employee menu.
       | Team 1     | Developer   | Boss      |
       | Team 2     | Boss        | Developer |
 
-  @seventhOK
+  @CTSL10-469
   Scenario:Verify Hr user should be able to drag and drop the existing department under another department as a subdepartment
     When user drag and drop a department under another department
 
-  @eighthOK
+  @CTSL10-470
   Scenario Outline:Verify Helpdesk and marketing users can not change company structure
     Then user see ADD DEPARTMENT button
     When user select log out
