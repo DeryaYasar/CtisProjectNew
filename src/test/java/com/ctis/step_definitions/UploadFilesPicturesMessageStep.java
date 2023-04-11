@@ -35,12 +35,13 @@ public class UploadFilesPicturesMessageStep {
         String file2 = "/Users/suhedapehlivan/Desktop/ctisSoluions Project/files/git/github interview.docx";
         String file3 = "/Users/suhedapehlivan/Desktop/ctisSoluions Project/files/the starry night-van gogh.jpg";
         uploadFilesPicturesMessage.UploadFilesAndImagesBox.sendKeys(file1+ "\n" +file2+ "\n" +file3); */
+        uploadFilesPicturesMessage.UploadFilesAndImagesBox.sendKeys("/Users/suhedapehlivan/Desktop/ctisSoluions Project/files/thestarrynight-vangogh.jpg");
+        BrowserUtils.sleep(3);
         uploadFilesPicturesMessage.UploadFilesAndImagesBox.sendKeys("/Users/suhedapehlivan/Desktop/ctisSoluions Project/files/git_githubinterview.docx");
         BrowserUtils.sleep(3);
         uploadFilesPicturesMessage.UploadFilesAndImagesBox.sendKeys("/Users/suhedapehlivan/Desktop/ctisSoluions Project/files/Locators_Summary.pdf");
         BrowserUtils.sleep(3);
-        uploadFilesPicturesMessage.UploadFilesAndImagesBox.sendKeys("/Users/suhedapehlivan/Desktop/ctisSoluions Project/files/thestarrynight-vangogh.jpg");
-        BrowserUtils.sleep(2);
+
     }
     @When("User clikcs Send button to upload them")
     public void user_clikcs_send_button_to_upload_them() {
@@ -95,5 +96,6 @@ public class UploadFilesPicturesMessageStep {
     @And("User should be able to rename one files or images at any time before sending")
     public void userShouldBeAbleToRenameOneFilesOrImagesAtAnyTimeBeforeSending() {
 
+        uploadFilesPicturesMessage.renameMethd();
     }
 }

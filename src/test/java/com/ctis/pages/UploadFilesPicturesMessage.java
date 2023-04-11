@@ -2,6 +2,7 @@ package com.ctis.pages;
 
 import com.ctis.utilities.BrowserUtils;
 import com.ctis.utilities.Driver;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -53,6 +54,12 @@ public class UploadFilesPicturesMessage {
 
     @FindBy(xpath = "//span[@class='files-name-edit-btn']")
     public WebElement renameButtonn;
+
+    @FindBy(xpath = "//img[@class='files-preview']")
+    public WebElement renameImage;
+
+    @FindBy(xpath = "//input[@class='files-name-edit-inp']")
+    public WebElement rename1;
 
 
     public void uploaddifferentformatPhotoFiles1(){
@@ -108,6 +115,14 @@ public class UploadFilesPicturesMessage {
     public void renameMethd(){
 
         Actions actions = new Actions(Driver.getDriver());
+        actions.moveToElement(renameImage).perform();
+        renameImage.click();
+        renameButtonn.click();
+        BrowserUtils.sleep(2);
+        rename1.sendKeys(Keys.chord(Keys.COMMAND,"a")+Keys.CLEAR);
+        BrowserUtils.sleep(2);
+        rename1.sendKeys("githubRename");
+        BrowserUtils.sleep(2);
 
 
     }

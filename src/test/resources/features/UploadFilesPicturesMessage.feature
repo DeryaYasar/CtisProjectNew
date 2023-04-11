@@ -1,3 +1,4 @@
+@suhedaAll
 Feature: upload files and pictures as message
 
   Background: user is already logged in
