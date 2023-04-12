@@ -29,6 +29,20 @@ Feature: Interactions in message menu
       | Link                                        |
       | https://www.youtube.com/watch?v=OLxaG0TNgMM |
 
+  Scenario Outline: Verifying to be able to insert YouTube and Vimeo videos.
+    When user clicks to the message button
+    And user writes "Testing insert video function " to the message area
+    And user clicks to the insert video button
+    And user adds "<Video Link>" to the video source input area
+    And user clicks to the save button under video source
+    And user clicks to the send button
+    Then user should see inserted video is displayed on Activity Stream
+
+    Examples:
+      | Video Link                                  |
+      | https://www.youtube.com/watch?v=POQa127F7sI |
+      | https://vimeo.com/219525512                 |
+
 
 
   #1. User should be able to add mentions

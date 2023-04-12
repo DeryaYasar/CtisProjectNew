@@ -45,6 +45,19 @@ public class InteractionsInMessageMenu {
     @FindBy(xpath = "//a[@href ='https://www.youtube.com/watch?v=OLxaG0TNgMM']")
     public WebElement linkOnActivityStream;
 
+    @FindBy(xpath = "//span[@title='Insert video']")
+    public WebElement insertVideoButton;
+
+    @FindBy(xpath = "//input[@id='video_idPostFormLHE_blogPostForm-source']")
+    public WebElement insertVideoSourceInputArea;
+
+    @FindBy(xpath = "(//input[@value='Save'])[2]")
+    public WebElement saveButtonUnderVideoSource;
+
+    @FindBy(xpath = "(//div[@id='blog_post_body_490'])[1]")
+    public WebElement insertVideoTextAfterInserting;
+
+
 
 
 

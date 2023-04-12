@@ -8,6 +8,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.interactions.Actions;
 
 public class InteractionsInMessageMenuStepDef {
@@ -67,5 +68,29 @@ public class InteractionsInMessageMenuStepDef {
     public void userShouldSeeLinkDisplayedOnTheActivityStream(String linkText) {
         Assert.assertTrue(interactionsInMessageMenu.linkOnActivityStream.getText().contains(linkText));
         Assert.assertTrue(interactionsInMessageMenu.linkOnActivityStream.isDisplayed());
+    }
+
+    @And("user clicks to the insert video button")
+    public void userClicksToTheInsertVideoButton() {
+        interactionsInMessageMenu.insertVideoButton.click();
+    }
+
+    @And("user adds {string} to the video source input area")
+    public void userAddsToTheVideoSourceInputArea(String videoSource) {
+        interactionsInMessageMenu.insertVideoSourceInputArea.sendKeys(videoSource);
+    }
+
+    @And("user clicks to the save button under video source")
+    public void userClicksToTheSaveButtonUnderVideoSource() {
+        interactionsInMessageMenu.saveButtonUnderVideoSource.click();
+    }
+
+    @Then("user should see inserted video is displayed on Activity Stream")
+    public void userShouldSeeInsertedVideoIsDisplayedOnActivityStream() {
+        try {
+            Assert.assertTrue(interactionsInMessageMenu.insertVideoTextAfterInserting.isDisplayed());
+        } catch (NoSuchElementException e) {
+            e.printStackTrace();
+        }
     }
 }
