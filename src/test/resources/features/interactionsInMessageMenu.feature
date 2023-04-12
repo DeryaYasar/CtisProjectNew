@@ -9,7 +9,7 @@ Feature: Interactions in message menu
     And user lands on the home page.
 
   Scenario: Verifying to be able to add mention in message
-    When user clicks to the message
+    When user clicks to the message button
     And user writes "Test by Junior QA " to the message area
     And user clicks to the add mention button
     And user adds mention to the Gurhan
@@ -17,7 +17,7 @@ Feature: Interactions in message menu
     Then user should see "Gurhan" displayed on the Activity Stream
 
   Scenario Outline: Verifying to be able to attach link to the specific text
-    When user clicks to the message
+    When user clicks to the message button
     And user writes "To be able to a good QA, please click the link => " to the message area
     And user clicks to the link button
     And user adds "<Link>" to the Link input area
@@ -29,7 +29,6 @@ Feature: Interactions in message menu
       | Link                                        |
       | https://www.youtube.com/watch?v=OLxaG0TNgMM |
 
-#https://www.youtube.com/watch?v=OLxaG0TNgMM
 
 
   #1. User should be able to add mentions

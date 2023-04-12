@@ -14,7 +14,7 @@ public class InteractionsInMessageMenuStepDef {
 
     InteractionsInMessageMenu interactionsInMessageMenu = new InteractionsInMessageMenu();
 
-    @When("user clicks to the message")
+    @When("user clicks to the message button")
     public void user_clicks_to_the_message() {
         interactionsInMessageMenu.messageButton.click();
     }
