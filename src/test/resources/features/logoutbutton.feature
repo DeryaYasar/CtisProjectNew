@@ -1,5 +1,4 @@
 @wip
-
 Feature: Log out Function
 
 	Background:
