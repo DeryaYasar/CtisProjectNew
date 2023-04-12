@@ -8,18 +8,28 @@ Feature: Interactions in message menu
     Then clicks to the Log In button
     And user lands on the home page.
 
-  Scenario: Verifying to be able add mention in message
+  Scenario: Verifying to be able to add mention in message
     When user clicks to the message
-    And user writes "Test by Junior QA" to the message area
+    And user writes "Test by Junior QA " to the message area
     And user clicks to the add mention button
     And user adds mention to the Gurhan
     And user clicks to the send button
-    Then user should see Gurhan displayed on the Activity Stream
+    Then user should see "Gurhan" displayed on the Activity Stream
 
+  Scenario Outline: Verifying to be able to attach link to the specific text
+    When user clicks to the message
+    And user writes "To be able to a good QA, please click the link => " to the message area
+    And user clicks to the link button
+    And user adds "<Link>" to the Link input area
+    And user clicks to the save button
+    And user clicks to the send button
+    Then user should see "<Link>" displayed on the Activity Stream
 
+    Examples:
+      | Link                                        |
+      | https://www.youtube.com/watch?v=OLxaG0TNgMM |
 
-
-
+#https://www.youtube.com/watch?v=OLxaG0TNgMM
 
 
   #1. User should be able to add mentions
