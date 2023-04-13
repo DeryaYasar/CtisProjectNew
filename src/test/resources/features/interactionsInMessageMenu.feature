@@ -29,20 +29,49 @@ Feature: Interactions in message menu
       | Link                                        |
       | https://www.youtube.com/watch?v=OLxaG0TNgMM |
 
-  Scenario Outline: Verifying to be able to insert YouTube and Vimeo videos.
+
+  #Scenario Outline: Verifying to be able to insert YouTube videos.
+  #    When user clicks to the message button
+  #    And user writes "Testing for youtube video insert function in message menu " to the message area
+  #    And user clicks to the insert video button
+  #    And user adds "<Video Link>" to the video source input area
+  #    And user clicks to the save button under video source
+  #    And user clicks to the send button
+  #    Then user should see inserted video is displayed on Activity Stream
+  #
+  #    Examples:
+  #      | Video Link                                  |
+  #      | https://www.youtube.com/watch?v=POQa127F7sI |
+
+
+  #Scenario Outline: Verifying to be able to insert Vimeo videos.
+  #  #  When user clicks to the message button
+  #  #  And user writes "Testing for vimeo video insert function in message menu " to the message area
+  #    And user clicks to the insert video button
+  #    And user adds "<Video Link>" to the video source input area
+  #    And user chooses video size and clicks to the save button under vimeo video source
+  #    And user clicks to the send button
+  #    Then user should see inserted video is displayed on Activity Stream
+  #
+  #    Examples:
+  #      | Video Link                                  |
+  #      | https://vimeo.com/219525512                 |
+
+
+  Scenario Outline: Verifying to be able to attach link to the specific text
     When user clicks to the message button
-    And user writes "Testing insert video function " to the message area
-    And user clicks to the insert video button
-    And user adds "<Video Link>" to the video source input area
-    And user clicks to the save button under video source
-    And user clicks to the send button
-    Then user should see inserted video is displayed on Activity Stream
+    And user writes "Test for link canceling => " to the message area
+    And user clicks to the link button
+    And user adds "<Link>" to the Link input area
+    And user clicks to the save button
+    And user clicks to the link text in the message area
+    And user clicks to the link button
+    And user clicks to the remove link button
+    Then user should not see the link in the message area
 
     Examples:
-      | Video Link                                  |
-      | https://www.youtube.com/watch?v=POQa127F7sI |
-      | https://vimeo.com/219525512                 |
-
+      | Link                                        |
+      | Random Link |
 
 
   #1. User should be able to add mentions

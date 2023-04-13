@@ -57,6 +57,27 @@ public class InteractionsInMessageMenu {
     @FindBy(xpath = "(//div[@id='blog_post_body_490'])[1]")
     public WebElement insertVideoTextAfterInserting;
 
+    @FindBy(id ="video_idPostFormLHE_blogPostForm-size")
+    public WebElement videoSizeSelection;
+
+    @FindBy(xpath = "//input[@class=\'adm-btn-save\']")
+    public WebElement saveButtonForAddedVideo;
+
+    @FindBy(xpath = "//iframe[contains(@src, '219525512')]")
+    public WebElement videoIframe;
+
+    @FindBy(xpath = "//span[@class='bxhtmled-video-error']")
+    public WebElement videoNotFoundMessage;
+
+    @FindBy(xpath = "//span[@title='Remove link']//i")
+    public WebElement removeLinkButton;
+
+    @FindBy(xpath = "//a[@href='Random Link']")
+    public WebElement randomLinkInMessageMenu;
+
+
+
+
 
 
 

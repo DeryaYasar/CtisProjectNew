@@ -93,4 +93,26 @@ public class InteractionsInMessageMenuStepDef {
             e.printStackTrace();
         }
     }
+
+    @And("user chooses video size and clicks to the save button under vimeo video source")
+    public void userChoosesVideoSizeAndClicksToTheSaveButtonUnderVimeoVideoSource() {
+
+
+    }
+
+    @And("user clicks to the link text in the message area")
+    public void userClicksToTheLinkTextInTheMessageArea() {
+    }
+
+    @And("user clicks to the remove link button")
+    public void userClicksToTheRemoveLinkButton() {
+    }
+
+    @Then("user should not see the link in the message area")
+    public void userShouldNotSeeTheLinkInTheMessageArea() {
+    }
+
+
+
+
 }
