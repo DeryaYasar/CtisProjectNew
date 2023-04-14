@@ -20,7 +20,7 @@ import java.util.List;
 
 public class Send_Mess_AvtiveStream {
     Send_M_ActiveStream sendMActiveStream=new Send_M_ActiveStream();
-    String message="Hello hr1 try again more and more";
+    String message="Hello hr1 try again updated";
     @Given("user clicks to the Message Tab on the Navigation Bar")
     public void user_clicks_to_the_message_tab_on_the_navigation_bar() {
     sendMActiveStream.MessBtn.click();
