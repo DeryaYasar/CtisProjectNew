@@ -14,7 +14,7 @@ Feature: Interactions in message menu
     And user clicks to the add mention button
     And user adds mention to the Gurhan
     And user clicks to the send button
-    Then user should see "Gurhan" displayed on the Activity Stream
+    Then user should see "Gurhan" displayed on the Activity Streamm
 
   Scenario Outline: Verifying to be able to attach link to the specific text
     When user clicks to the message
