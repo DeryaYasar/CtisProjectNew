@@ -22,6 +22,7 @@ Feature: Filter and search functionality
     And user sees all choosen fields' input boxes is displayed on the screen
     Then user unchecks all field checkboxes and user sees all input boxes disappeared
 
+
   @CTSL10-
   Scenario: Verify that user should be able to search by specifying the date.
     When user clicks to the Restore default fields button

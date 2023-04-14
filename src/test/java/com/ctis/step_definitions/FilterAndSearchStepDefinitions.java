@@ -76,7 +76,6 @@ public class FilterAndSearchStepDefinitions {
     public void user_clicks_to_the_date_box_and_specific_dates_appears() {
         filterAndSearchPage.dateInputBox.click();
     }
-
     @When("user chooses the Exact Date as an option")
     public void user_chooses_the_exact_date_as_an_option() {
         Actions actions = new Actions(Driver.getDriver());
