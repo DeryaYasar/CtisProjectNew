@@ -44,7 +44,7 @@ public class InteractionsInMessageMenuStepDef {
         BrowserUtils.waitFor(2);
     }
 
-    @Then("user should see {string} displayed on the Activity Stream")
+    @Then("user should  see {string} displayed on the Activity Stream")
     public void userShouldSeeDisplayedOnTheActivityStream(String gurhanText) {
         Assert.assertTrue(interactionsInMessageMenu.gurhanAfterMention.getText().contains(gurhanText));
     }
@@ -63,13 +63,13 @@ public class InteractionsInMessageMenuStepDef {
     public void userClicksToTheSaveButton() {
         interactionsInMessageMenu.saveButtonUnderLinkUrl.click();
     }
-
+/*
     @Then("user should see {string} displayed on the Activity Stream")
     public void userShouldSeeLinkDisplayedOnTheActivityStream(String linkText) {
         Assert.assertTrue(interactionsInMessageMenu.linkOnActivityStream.getText().contains(linkText));
         Assert.assertTrue(interactionsInMessageMenu.linkOnActivityStream.isDisplayed());
     }
-
+*/
     @And("user clicks to the insert video button")
     public void userClicksToTheInsertVideoButton() {
         interactionsInMessageMenu.insertVideoButton.click();
@@ -97,19 +97,22 @@ public class InteractionsInMessageMenuStepDef {
     @And("user chooses video size and clicks to the save button under vimeo video source")
     public void userChoosesVideoSizeAndClicksToTheSaveButtonUnderVimeoVideoSource() {
 
-
     }
 
     @And("user clicks to the link text in the message area")
     public void userClicksToTheLinkTextInTheMessageArea() {
+        interactionsInMessageMenu.randomLinkInMessageMenu.click();
     }
 
     @And("user clicks to the remove link button")
     public void userClicksToTheRemoveLinkButton() {
+        interactionsInMessageMenu.removeLinkButton.click();
     }
 
     @Then("user should not see the link in the message area")
     public void userShouldNotSeeTheLinkInTheMessageArea() {
+        Assert.assertFalse(interactionsInMessageMenu.randomLinkInMessageMenu.isDisplayed());
+
     }
 
 

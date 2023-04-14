@@ -14,64 +14,44 @@ Feature: Interactions in message menu
     And user clicks to the add mention button
     And user adds mention to the Gurhan
     And user clicks to the send button
-    Then user should see "Gurhan" displayed on the Activity Stream
+    Then user should  see "Gurhan" displayed on the Activity Stream
 
-  Scenario Outline: Verifying to be able to attach link to the specific text
+  Scenario: Verifying to be able to attach link to the specific text
     When user clicks to the message button
     And user writes "To be able to a good QA, please click the link => " to the message area
     And user clicks to the link button
-    And user adds "<Link>" to the Link input area
+    And user adds "https://www.youtube.com/watch?v=OLxaG0TNgMM" to the Link input area
     And user clicks to the save button
     And user clicks to the send button
-    Then user should see "<Link>" displayed on the Activity Stream
+    Then user should  see "https://www.youtube.com/watch?v=OLxaG0TNgMMurhan" displayed on the Activity Stream
+
+
+  Scenario Outline: Verifying to be able to insert Youtube and Vimeo videos.
+   When user clicks to the message button
+   And user writes "Testing for video insert function in message menu " to the message area
+     And user clicks to the insert video button
+     And user adds "<Video Link>" to the video source input area
+     And user chooses video size and clicks to the save button under vimeo video source
+     And user clicks to the send button
+     Then user should see inserted video is displayed on Activity Stream
 
     Examples:
-      | Link                                        |
-      | https://www.youtube.com/watch?v=OLxaG0TNgMM |
+      | Video Link                  |
+      | https://vimeo.com/219525512 |
 
 
-  #Scenario Outline: Verifying to be able to insert YouTube videos.
-  #    When user clicks to the message button
-  #    And user writes "Testing for youtube video insert function in message menu " to the message area
-  #    And user clicks to the insert video button
-  #    And user adds "<Video Link>" to the video source input area
-  #    And user clicks to the save button under video source
-  #    And user clicks to the send button
-  #    Then user should see inserted video is displayed on Activity Stream
-  #
-  #    Examples:
-  #      | Video Link                                  |
-  #      | https://www.youtube.com/watch?v=POQa127F7sI |
-
-
-  #Scenario Outline: Verifying to be able to insert Vimeo videos.
-  #  #  When user clicks to the message button
-  #  #  And user writes "Testing for vimeo video insert function in message menu " to the message area
-  #    And user clicks to the insert video button
-  #    And user adds "<Video Link>" to the video source input area
-  #    And user chooses video size and clicks to the save button under vimeo video source
-  #    And user clicks to the send button
-  #    Then user should see inserted video is displayed on Activity Stream
-  #
-  #    Examples:
-  #      | Video Link                                  |
-  #      | https://vimeo.com/219525512                 |
-
-
-  Scenario Outline: Verifying to be able to attach link to the specific text
+  @wipp
+  Scenario: Verifying to be able to attach link to the specific text
     When user clicks to the message button
     And user writes "Test for link canceling => " to the message area
     And user clicks to the link button
-    And user adds "<Link>" to the Link input area
+    And user adds "Random Link" to the Link input area
     And user clicks to the save button
     And user clicks to the link text in the message area
     And user clicks to the link button
     And user clicks to the remove link button
     Then user should not see the link in the message area
 
-    Examples:
-      | Link                                        |
-      | Random Link |
 
 
   #1. User should be able to add mentions
