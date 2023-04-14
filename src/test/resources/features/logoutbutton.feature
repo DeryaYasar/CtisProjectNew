@@ -11,7 +11,6 @@ Feature: Log out Function
 		And user lands on the home page.
 
 
-
 	@CTSL10-375
 	Scenario: Users can log out button
 		And users click dropdown contains username right side
