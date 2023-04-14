@@ -1,7 +1,7 @@
 Feature: Default
 
 
-	@CTSL10-321
+	@CTSL10-321 @smoke
 	Scenario: Verify user type 'Human Resource ' can login
 		Given user is on the login page
 		When user enters username "hr1@cybertekschool.com"
