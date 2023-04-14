@@ -11,7 +11,6 @@ public class FilterAndSearchPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-
     @FindBy (xpath = "//input[@placeholder='Filter and search']")
     public WebElement filterAndSearchBox;
     @FindBy(xpath = "(//span[.='Work'])[2]")
