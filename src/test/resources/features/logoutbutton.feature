@@ -1,4 +1,3 @@
-@wip
 
 Feature: Log out Function
 
