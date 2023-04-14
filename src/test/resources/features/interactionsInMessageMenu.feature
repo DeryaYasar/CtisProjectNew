@@ -25,7 +25,6 @@ Feature: Interactions in message menu
     And user clicks to the send button
     Then user should  see "https://www.youtube.com/watch?v=OLxaG0TNgMMurhan" displayed on the Activity Stream
 
-
   Scenario Outline: Verifying to be able to insert Youtube and Vimeo videos.
    When user clicks to the message button
    And user writes "Testing for video insert function in message menu " to the message area
@@ -39,8 +38,6 @@ Feature: Interactions in message menu
       | Video Link                  |
       | https://vimeo.com/219525512 |
 
-
-  @wipp
   Scenario: Verifying to be able to attach link to the specific text
     When user clicks to the message button
     And user writes "Test for link canceling => " to the message area
