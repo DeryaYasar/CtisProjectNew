@@ -1,5 +1,4 @@
 @wip
-
 Feature: Log out Function
 
 	Background:
@@ -10,7 +9,6 @@ Feature: Log out Function
 		And user enters password "UserUser"
 		Then clicks to the Log In button
 		And user lands on the home page.
-
 
 
 	@CTSL10-375
