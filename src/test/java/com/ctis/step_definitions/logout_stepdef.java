@@ -40,7 +40,7 @@ public class logout_stepdef {
     @And("users click Log out button under profile name")
     public void usersClickLogOutButtonUnderProfileName() {
 
-        logoutPageElements.logoutButton.click();
+        logoutPageElements.logout();
     }
 
     @When("after succesfully log out users click to the go back button on browser")
