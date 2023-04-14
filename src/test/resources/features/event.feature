@@ -1,3 +1,4 @@
+@wip
 Feature: Event modules functionality
 
   Background:Verify user type 'Human Resource ' can login
@@ -19,11 +20,11 @@ Feature: Event modules functionality
     When user clicks Event tab
     And User click set reminder radio button
     Then User sets count and "<time type>"
-  Examples:
-    |time type|
-    |min|
-    |hour  |
-    |day   |
+    Examples:
+      |time type|
+      |min|
+      |hour  |
+      |day   |
 
   @CTSL10-446
   Scenario: User should be able to send event by filling in the mandatory fields.
@@ -32,19 +33,19 @@ Feature: Event modules functionality
     And User select event location
     And User adds members to event
     |hr5@cybertekschool.com|
-    |marketing5@cybertekschool.com|
-    |hr99@cybertekschool.com      |
-    |marketing1@cybertekschool.com|
+    |marketing48@cybertekschool.com|
+    |helpdesk23@cybertekschool.com      |
+    |marketing50@cybertekschool.com|
     And User creates event
     Then user sees event created
 
 
-  @wip
+  @CTSL10-447
   Scenario: User should be able to cancel sending event at any time before sending
     When user clicks Event tab
     And User writes event name
     And User select event location
     And User adds members to event
       |hr5@cybertekschool.com|
-      |marketing5@cybertekschool.com|
+      |marketing48@cybertekschool.com|
     And User cancels the event
