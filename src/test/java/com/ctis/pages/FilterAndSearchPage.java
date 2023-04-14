@@ -39,6 +39,7 @@ public class FilterAndSearchPage {
     @FindBy(xpath = "(//div[.='Date'])[2]")
     public WebElement dateFieldCheckBox;
 
+
     @FindBy(xpath = "//div[@data-name='DATE_CREATE_datesel']")
     public WebElement dateInputBox;
 

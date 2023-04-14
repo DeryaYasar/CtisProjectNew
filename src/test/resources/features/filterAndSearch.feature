@@ -2,7 +2,6 @@
 Feature: Filter and search functionality
   As a user, I should be able to use "Filter and search" functionality on Active Stream.
 
-
   Background: Verify user type 'Human Resource' can login
     Given user is on the login page
     When user enters username "hr1@cybertekschool.com"
