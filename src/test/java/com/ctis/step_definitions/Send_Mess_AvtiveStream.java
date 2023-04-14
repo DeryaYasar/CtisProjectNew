@@ -106,19 +106,16 @@ public class Send_Mess_AvtiveStream {
         sendMActiveStream.CanclBtnn.click();
     }
 
-    @Then("verifies that messagefield is dissappear and send message... is displayed under the message part")
-    public void verifiesThatMessagefieldIsDissappearAndSendMessageIsDisplayedUnderTheMessagePart() {
-
+    @Then("verifies that messagefield is dissappear")
+    public void verifiesThatMessagefieldIsDissappear() {
         Dimension size = sendMActiveStream.MssField.getSize();
-       // System.out.println(size);
+        // System.out.println(size);
         int height = size.getHeight();
         int width=size.getWidth();
-       // System.out.println(height);
-       // System.out.println(width);
+        // System.out.println(height);
+        // System.out.println(width);
 
         Assert.assertEquals(height,0);
         Assert.assertEquals(width,0);
-
-
     }
 }

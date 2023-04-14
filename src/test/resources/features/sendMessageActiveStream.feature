@@ -1,4 +1,4 @@
-
+@wip
 Feature: As a user, I should be able to send messages by  clicking on Message tab under Active Stream.
 
 
@@ -35,11 +35,11 @@ Feature: As a user, I should be able to send messages by  clicking on Message ta
     And clicks on to the Send button
     Then verifies to see that -Please specify at least one person- text as error message
 
-  @wip
+
   Scenario: Verify that user can cancel sending messages at any time before sending.
     Given user clicks to the Message Tab on the Navigation Bar
     When user writes a message in to the Message Field
     And chooses one or more  recipients from recipient input
     And clicks on to the Cancel button
-    Then verifies that messagefield is dissappear and send message... is displayed under the message part
+    Then verifies that messagefield is dissappear
 
