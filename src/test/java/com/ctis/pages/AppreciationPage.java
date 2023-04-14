@@ -56,11 +56,11 @@ public class AppreciationPage {
 
              //div[@id='blg-post-380']
              //activity stream yazısının altındaki alanı locate et dersek??
-            // @FindBy(xpath = "//div[@class='feed-post-text-block-inner-inner']")
+             //@FindBy(xpath = "//div[@class='feed-post-text-block-inner-inner']")
              //public WebElement resultInActivityStream;
 
-             @FindBy(xpath = "//div[.='Excellent!']")
-             public WebElement resultInActivityStream;
+           @FindBy(xpath = "//div[.='Perfetto'][1]")
+           public WebElement resultInActivityStream;
 
              //AC2
              @FindBy(xpath = "//span[.='All employees']")
@@ -85,6 +85,13 @@ public class AppreciationPage {
 
              @FindBy(xpath = "//span[@title='Crown']")
              public WebElement iconCrown;
+
+
+             @FindBy(xpath = "//span[.='More'][1]")
+              public WebElement moreeButton;
+
+             @FindBy(xpath = "//span[.='Delete'][1]")
+             public WebElement deleteeButton;
 
 
 
