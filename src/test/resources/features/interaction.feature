@@ -20,7 +20,7 @@ Feature: Interact with employees on the posts
 
 
   @CTSL10-472
-  Scenario: Verify that user can be able to make a comment, like, or unfollow other employees posts.
+  Scenario: Verify that user can be able to like and replay his/her own comment.
     When user likes his-her own comment
     And user replies his-her own comment
     Then user verifies the comment is liked
