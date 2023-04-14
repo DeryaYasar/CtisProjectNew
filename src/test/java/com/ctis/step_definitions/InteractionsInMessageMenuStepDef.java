@@ -43,8 +43,8 @@ public class InteractionsInMessageMenuStepDef {
         BrowserUtils.waitFor(2);
     }
 
-    @Then("user should see {string} displayed on the Activity Stream")
-    public void userShouldSeeDisplayedOnTheActivityStream(String gurhanText) {
+    @Then("user should see {string} displayed on the Activity Streamm")
+    public void userShouldSeeDisplayedOnTheActivityStreamm(String gurhanText) {
         Assert.assertTrue(interactionsInMessageMenu.gurhanAfterMention.getText().contains(gurhanText));
     }
 
