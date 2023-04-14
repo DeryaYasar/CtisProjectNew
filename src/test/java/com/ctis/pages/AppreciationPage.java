@@ -40,6 +40,7 @@ public class AppreciationPage {
              @FindBy(xpath = "//span[@class='feed-add-grat-box feed-add-grat-medal-thumbsup']")
              public WebElement stickerButton;
 
+
              @FindBy(xpath = "//span[@title='Gift']")
              public WebElement giftSticker;
 
@@ -55,7 +56,10 @@ public class AppreciationPage {
 
              //div[@id='blg-post-380']
              //activity stream yazısının altındaki alanı locate et dersek??
-             @FindBy(xpath = "//div[@class='feed-post-text-block-inner-inner']")
+            // @FindBy(xpath = "//div[@class='feed-post-text-block-inner-inner']")
+             //public WebElement resultInActivityStream;
+
+             @FindBy(xpath = "//div[.='Congrats!']")
              public WebElement resultInActivityStream;
 
              //AC2
@@ -64,6 +68,23 @@ public class AppreciationPage {
 
              @FindBy(xpath = "//div[.='Gurhan']")
              public WebElement gurhanUser;
+
+             //AC3
+             @FindBy(xpath = "//button[@id='blog-submit-button-cancel']")
+             public WebElement cancelButton;
+
+             //AC4
+             @FindBy(xpath = "//span[@title='Thumbs Up']")
+             public WebElement iconThumbsUp;
+
+             @FindBy(xpath = "//span[@title='Award']")
+             public WebElement iconAward;
+
+             @FindBy(xpath = "//span[@class='feed-add-grat-box feed-add-grat-medal-cup']")
+             public WebElement newStickerButton;
+
+             @FindBy(xpath = "//span[@title='Crown']")
+             public WebElement iconCrown;
 
 
 

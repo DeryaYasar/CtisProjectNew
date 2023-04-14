@@ -5,6 +5,7 @@ import com.ctis.utilities.Driver;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
@@ -28,7 +29,7 @@ public class appreciation_stepDef {
     @When("user should text appreciation message in the Message Content field")
     public void user_should_text_appreciation_message_in_the_message_content_field() {
         Actions actions= new Actions(Driver.getDriver());
-        actions.moveToElement(appreciationPage.contentField).sendKeys("Congrats!").perform();
+        actions.moveToElement(appreciationPage.contentField).sendKeys("Excellent!").perform();
 
        // Driver.getDriver().switchTo().frame(appreciationPage.contentField);
         //appreciationPage.contentField.sendKeys("Congrats!");
@@ -72,10 +73,9 @@ public class appreciation_stepDef {
 
     @Then("user should see sent message on the activity stream page")
     public void user_should_see_sent_message_on_the_activity_stream_page() {
-          String actualResult= appreciationPage.resultInActivityStream.getText();
-          String expectedMessage="Congrats!";
-          // Assert.assertTrue(appreciationPage.resultInActivityStream.equals("Congrats!"));
-          Assert.assertTrue(actualResult.contains(expectedMessage));
+        String actualText= appreciationPage.resultInActivityStream.getText();
+          String expectedText="Excellent!";
+          Assert.assertTrue(actualText.contains(expectedText));
     }
 
 
@@ -93,6 +93,30 @@ public class appreciation_stepDef {
     public void addsGurhanFromTheOptions() {
         appreciationPage.addPersonOrGroupsOrDepartmnt.click();
         appreciationPage.gurhanUser.click();
+
+    }
+
+    @And("user clicks cancel button")
+    public void userClicksCancelButton() {
+        appreciationPage.cancelButton.click();
+    }
+
+    @Then("appreciation content field is disappeared")
+    public void appreciationContentFieldIsDisappeared() {
+        Assert.assertFalse(appreciationPage.contentField.isDisplayed());
+    }
+
+    @And("user chooses an icon from sticker field")
+    public void userChoosesAnIconFromStickerField() throws InterruptedException {
+         appreciationPage.stickerButton.click();
+         appreciationPage.iconThumbsUp.click();
+         Thread.sleep(2000);
+         appreciationPage.stickerButton.click();
+         appreciationPage.iconAward.click();
+         Thread.sleep(2000);
+         appreciationPage.newStickerButton.click();
+         appreciationPage.iconCrown.click();
+
 
     }
 }
