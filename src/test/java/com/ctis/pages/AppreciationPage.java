@@ -59,7 +59,7 @@ public class AppreciationPage {
             // @FindBy(xpath = "//div[@class='feed-post-text-block-inner-inner']")
              //public WebElement resultInActivityStream;
 
-             @FindBy(xpath = "//div[.='Congrats!']")
+             @FindBy(xpath = "//div[.='Excellent!']")
              public WebElement resultInActivityStream;
 
              //AC2
