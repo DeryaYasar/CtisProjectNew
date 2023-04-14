@@ -1,5 +1,5 @@
-@emin
-Feature: Default
+
+Feature: As a user, I should be able to send appreciation by clicking on Appreciation tab under Active Stream.
 
 	Background: Verify user type 'Human Resource' can login
 		Given user is on the login page

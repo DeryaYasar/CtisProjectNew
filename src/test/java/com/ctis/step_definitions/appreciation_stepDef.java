@@ -2,6 +2,7 @@ package com.ctis.step_definitions;
 
 import com.ctis.pages.AppreciationPage;
 import com.ctis.utilities.Driver;
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
@@ -29,7 +30,9 @@ public class appreciation_stepDef {
     @When("user should text appreciation message in the Message Content field")
     public void user_should_text_appreciation_message_in_the_message_content_field() {
         Actions actions= new Actions(Driver.getDriver());
-        actions.moveToElement(appreciationPage.contentField).sendKeys("Excellent!").perform();
+        Faker faker= new Faker();
+       // actions.moveToElement(appreciationPage.contentField).sendKeys(faker.address().city()).perform();
+        actions.moveToElement(appreciationPage.contentField).sendKeys("Perfetto").perform();
 
        // Driver.getDriver().switchTo().frame(appreciationPage.contentField);
         //appreciationPage.contentField.sendKeys("Congrats!");
@@ -71,11 +74,16 @@ public class appreciation_stepDef {
            appreciationPage.sendButton.click();
     }
 
+
     @Then("user should see sent message on the activity stream page")
     public void user_should_see_sent_message_on_the_activity_stream_page() {
-        String actualText= appreciationPage.resultInActivityStream.getText();
-          String expectedText="Excellent!";
-          Assert.assertTrue(actualText.contains(expectedText));
+
+       String actualText= appreciationPage.resultInActivityStream.getText();
+       String expectedText= "Perfetto";
+       Assert.assertTrue(actualText.contains(expectedText));
+       appreciationPage.moreeButton.click();
+       appreciationPage.deleteeButton.click();
+
     }
 
 
@@ -83,6 +91,7 @@ public class appreciation_stepDef {
     public void userShouldSeeAllEmployeesAsRecipientOfTheMessageByDefault() {
          String actualText= appreciationPage.allEmployesText.getText();
          String expectedText= "All employees";
+
          Assert.assertTrue(actualText.equals(expectedText));
 
 
