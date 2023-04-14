@@ -13,7 +13,6 @@ public class FilterAndSearchPage {
 
     @FindBy (xpath = "//input[@placeholder='Filter and search']")
     public WebElement filterAndSearchBox;
-
     @FindBy(xpath = "(//span[.='Work'])[2]")
     public WebElement workFilter;
 

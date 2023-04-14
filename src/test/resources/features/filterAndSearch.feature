@@ -31,6 +31,7 @@ Feature: Filter and search functionality
     And user chooses a random date
     Then user clicks the search button
 
+
   @CTSL10
   Scenario: Verify that user should be able to search by selecting single type.
     Given user clicks to the Restore default fields button
