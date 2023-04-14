@@ -8,7 +8,7 @@ Feature: Default
 		And clicks to the Log In button
 		Then user lands on the home page.
 
-	@CTSL10-439 @CTSL10-443
+	@CTSL10-439 @CTSL10-443 @emine
 	Scenario: Verify user can send an appreciation by filling the mandatory fields
 		Given user clicks More button under Active Stream
 		    When user should see and click Appreciation button
