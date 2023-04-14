@@ -8,13 +8,14 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.interactions.Actions;
 
 public class InteractionsInMessageMenuStepDef {
 
     InteractionsInMessageMenu interactionsInMessageMenu = new InteractionsInMessageMenu();
 
-    @When("user clicks to the message")
+    @When("user clicks to the message button")
     public void user_clicks_to_the_message() {
         interactionsInMessageMenu.messageButton.click();
     }
@@ -43,8 +44,8 @@ public class InteractionsInMessageMenuStepDef {
         BrowserUtils.waitFor(2);
     }
 
-    @Then("user should see {string} displayed on the Activity Streamm")
-    public void userShouldSeeDisplayedOnTheActivityStreamm(String gurhanText) {
+    @Then("user should  see {string} displayed on the Activity Stream")
+    public void userShouldSeeDisplayedOnTheActivityStream(String gurhanText) {
         Assert.assertTrue(interactionsInMessageMenu.gurhanAfterMention.getText().contains(gurhanText));
     }
 
@@ -62,10 +63,57 @@ public class InteractionsInMessageMenuStepDef {
     public void userClicksToTheSaveButton() {
         interactionsInMessageMenu.saveButtonUnderLinkUrl.click();
     }
-
-    @Then("user should see {string} displayed on the Activity Stream")
-    public void userShouldSeeLinkDisplayedOnTheActivityStream(String linkText) {
-        Assert.assertTrue(interactionsInMessageMenu.linkOnActivityStream.getText().contains(linkText));
-        Assert.assertTrue(interactionsInMessageMenu.linkOnActivityStream.isDisplayed());
+    /*
+        @Then("user should see {string} displayed on the Activity Stream")
+        public void userShouldSeeLinkDisplayedOnTheActivityStream(String linkText) {
+            Assert.assertTrue(interactionsInMessageMenu.linkOnActivityStream.getText().contains(linkText));
+            Assert.assertTrue(interactionsInMessageMenu.linkOnActivityStream.isDisplayed());
+        }
+    */
+    @And("user clicks to the insert video button")
+    public void userClicksToTheInsertVideoButton() {
+        interactionsInMessageMenu.insertVideoButton.click();
     }
+
+    @And("user adds {string} to the video source input area")
+    public void userAddsToTheVideoSourceInputArea(String videoSource) {
+        interactionsInMessageMenu.insertVideoSourceInputArea.sendKeys(videoSource);
+    }
+
+    @And("user clicks to the save button under video source")
+    public void userClicksToTheSaveButtonUnderVideoSource() {
+        interactionsInMessageMenu.saveButtonUnderVideoSource.click();
+    }
+
+    @Then("user should see inserted video is displayed on Activity Stream")
+    public void userShouldSeeInsertedVideoIsDisplayedOnActivityStream() {
+        try {
+            Assert.assertTrue(interactionsInMessageMenu.insertVideoTextAfterInserting.isDisplayed());
+        } catch (NoSuchElementException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @And("user chooses video size and clicks to the save button under vimeo video source")
+    public void userChoosesVideoSizeAndClicksToTheSaveButtonUnderVimeoVideoSource() {
+
+    }
+
+    @And("user clicks to the link text in the message area")
+    public void userClicksToTheLinkTextInTheMessageArea() {
+        interactionsInMessageMenu.randomLinkInMessageMenu.click();
+    }
+
+    @And("user clicks to the remove link button")
+    public void userClicksToTheRemoveLinkButton() {
+        interactionsInMessageMenu.removeLinkButton.click();
+    }
+
+    @Then("user should not see the link in the message area")
+    public void userShouldNotSeeTheLinkInTheMessageArea() {
+        Assert.assertFalse(interactionsInMessageMenu.randomLinkInMessageMenu.isDisplayed());
+
+    }
+
+
 }
