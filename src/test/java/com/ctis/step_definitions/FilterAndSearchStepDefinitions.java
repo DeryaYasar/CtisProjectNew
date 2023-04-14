@@ -73,7 +73,6 @@ public class FilterAndSearchStepDefinitions {
         BrowserUtils.sleep(2);
     }
 
-
     @When("user clicks to the date box and specific dates appears")
     public void user_clicks_to_the_date_box_and_specific_dates_appears() {
         filterAndSearchPage.dateInputBox.click();

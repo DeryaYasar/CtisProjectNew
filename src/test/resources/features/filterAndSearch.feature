@@ -10,7 +10,6 @@ Feature: Filter and search functionality
     And user lands on the home page.
     When user hover over and clicks the filter and search box
 
-
   @CTSL10-
   Scenario: Verifying to see default filters
     Then user should be able to see default filters as my activity, work, favorite, announcements and workflows

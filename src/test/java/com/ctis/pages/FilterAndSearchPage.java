@@ -7,7 +7,6 @@ import org.openqa.selenium.support.PageFactory;
 
 public class FilterAndSearchPage {
 
-
     public FilterAndSearchPage(){
         PageFactory.initElements(Driver.getDriver(), this);
     }
