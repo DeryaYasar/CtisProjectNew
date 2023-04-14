@@ -25,11 +25,22 @@ public class Send_M_ActiveStream {
     @FindBy(xpath = "//span[@id=\"feed-add-post-destination-item\"]/span")
     public WebElement AllEmpBtnn;
 
-    @FindBy(id="blog-submit-button-cancel")
+    @FindBy(xpath = "//button[@id='blog-submit-button-save']")
     public WebElement SendingBtnn;
 
-    @FindBy(id="blog_post_body_551")
-    public WebElement AddingMes;
+   // @FindBy(id="blog_post_body_551")
+   // public WebElement AddingMes;
 
+    @FindBy(xpath = "//span[@class='feed-add-info-text']")
+    public WebElement TitleMess;
+
+    @FindBy(xpath = "//span[text()='All employees']")
+    public WebElement AllEmpDef;
+
+    @FindBy(xpath = "//span[@class='feed-add-info-text']")
+    public WebElement AtLeastErrMess;
+
+    @FindBy(id="blog-submit-button-cancel")
+    public WebElement CanclBtnn;
 
 }
